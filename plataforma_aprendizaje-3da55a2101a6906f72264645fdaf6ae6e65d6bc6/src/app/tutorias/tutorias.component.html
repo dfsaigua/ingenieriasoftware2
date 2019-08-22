@@ -1,0 +1,115 @@
+<head>
+  <title>Full Motion</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+  >
+    <a href="principal"><mat-toolbar>LOGO</mat-toolbar></a>
+    <mat-nav-list>
+      <a mat-list-item href="login">Log-In</a>
+      <a mat-list-item href="tutorias">Tutorias</a>
+      <a mat-list-item href="cursos">Cursos</a>
+      <a mat-list-item href="conocenos">Conócenos</a>
+      <a mat-list-item href="politicas">Politicas </a>
+    </mat-nav-list>
+    <div class="opciones">
+        <h4>Seleccionar tutoría:</h4>
+        <input
+          type="text"
+          class="form-control"
+          name="filterPost"
+          placeholder="Buscar"
+          [(ngModel)]="filterPostt"
+        />
+
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>TUTORIAS DISPONIBLES</span>
+    </mat-toolbar>
+
+    <body id="top">
+        <div class="row" *ngFor="let d of data | filter: filterPostt">
+        <div class="col-sm-3">
+          <div class="well">
+            <h3>{{ d.category.name }}</h3>
+            <button routerLink="/registro" class="btn btn-success btn-sm">
+              <span class="glyphicon glyphicon-user"></span> Registrarse
+            </button>
+            <!-- <button routerLink="/registro" class="btn btn-primary btn-sm"> Información</button> -->
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Descripción de Tutoría: {{ d.category.description }}</p>
+            <p>Tipo de tutoría: {{ d.name }}</p>
+            <p>Fecha de la tutoría: {{ d.date }}</p>
+            <p>Hora de inicio: {{ d.time }}</p>
+            <p>Duración de tutoría: {{ d.tutorship_type.duration }}</p>
+            <p>Costo: ${{ d.tutorship_type.cost }}</p>
+          </div>
+        </div>
+      </div>
+      <!-- <footer id="footer">
+        <div class="inner">
+          <h2>Proyecto Plataforma-Aprendizaje</h2>
+          <p class="id_small">
+            © El contenido de esta obra es de propiedad intelectual de "Proyecto
+            de Aprendizaje". Todos los derechos reservados.Prohibida su
+            reproducción total,parcial, comunicación pública o distribución sin
+            autorización previa del titular de los derechos
+          </p>
+          <ul class="icons">
+            <li>
+              <a href="#" class="icon fa-twitter"
+                ><span class="label">Twitter</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="icon fa-facebook"
+                ><span class="label">Facebook</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="icon fa-instagram"
+                ><span class="label">Instagram</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="icon fa-envelope"
+                ><span class="label">Email</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </footer> -->
+    </body>
+  </mat-sidenav-content>
+</mat-sidenav-container>

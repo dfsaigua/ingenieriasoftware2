@@ -1,0 +1,78 @@
+<head>
+  <title>Full Motion</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <a href="principal"><mat-toolbar>LOGO</mat-toolbar></a>
+    <mat-nav-list>
+      <a mat-list-item href="#">Log-In</a>
+      <a mat-list-item href="tutorias">Tutorias</a>
+      <a mat-list-item href="cursos">Cursos</a>
+      <a mat-list-item href="conocenos">Conócenos</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Cursos</span>
+    </mat-toolbar>
+
+      <body id="top">
+
+        <!-- Main -->
+          <div id="main">
+            <div class="inner">
+  
+            <!-- Boxes -->
+              <div class="thumbnails">
+              	<div *ngFor="let d of data">
+ 		 			
+  		 			
+  				
+  
+                <div class="box">
+                  <a href="https://www.youtube.com/watch?v=KpzfdkTuiC4" class="image fit"><img src="" alt="" /></a>
+                  <div class="inner">
+                    <h3>{{ d.name }}</h3>
+                   
+                    <p><b>Categoría: </b>{{ d.category }}<br/> 
+  		  			      <b>Tutor del Curso: </b>{{d.tutor}}<br/> 
+  		  			      <b>Fecha de Inicio del Curso: </b> {{d.start_date}}<br/> 
+  		  			      <b>Fecha de Fin del Curso: </b> {{d.end_date}}<br/> 
+  		  			      </p>
+                    <a href="https://www.youtube.com/watch?v=KpzfdkTuiC4" class="button fit" data-poptrox="youtube,800x400">Watch</a>
+                  </div>
+                </div>
+  
+                
+  				</div>
+              </div>
+  
+            </div>
+          </div>
+          <footer id="footer">
+            <div class="inner">
+              <h2>Proyecto Plataforma-Aprendizaje</h2>
+              <p class="id_small"> © El contenido de esta obra es de propiedad intelectual de "Proyecto de Aprendizaje". Todos los derechos reservados.Prohibida su reproducción total,parcial, comunicación pública o distribución sin autorización previa del titular de los derechos</p>
+              <ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+              </ul>
+            </div>
+          </footer>
+  
+    </body>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>

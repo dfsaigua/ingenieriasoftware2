@@ -1,0 +1,53 @@
+
+.navbar {
+  margin-bottom: 0;
+  background-color:black;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+  font-family: Montserrat, sans-serif;
+
+}
+.navbar li a, .navbar .navbar-brand {
+  color: #fff !important;
+
+}
+
+body {
+    background: #F1F3FA;
+    height: max-content;
+  }
+
+  .col-sm-3 {
+    width: 25%;
+    margin-top: 60px;
+  }
+  .col-sm-9 {
+    width: 45%;
+    margin-top: 60px;
+  }
+
+
+  .col-md-4 {
+    width: 25%;
+    margin-top: 60px;
+  }
+
+  .col-md-6 {
+    width: 20%;
+    margin-top: 60px;
+  }
+
+
+  .btn-group-sm>.btn, .btn-sm {
+    padding: 7px 11px;
+    font-size: 13px;
+    line-height: 1.6;
+    border-radius: 3px;
+    margin-right: 3px;
+}
+
+
