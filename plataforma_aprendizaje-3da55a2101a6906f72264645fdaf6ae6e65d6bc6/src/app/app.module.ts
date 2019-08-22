@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DetallepagoComponent } from './detallepago/detallepago.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FiltertPipe } from './pipes/filtert.pipe';
+import { FilerpPipe } from './pipes/filerp.pipe';
 import { PlattutoriaComponent } from './plattutoria/plattutoria.component';
 import { PlatcursosComponent } from './platcursos/platcursos.component';
 import { StorageHandlerService } from './servicios/storage-handler.service';
@@ -79,7 +80,7 @@ const appRoutes: Routes = [
     FilterPipe,
     FiltertPipe,
     PlattutoriaComponent,
-   
+    FilerpPipe,
     
 
 
