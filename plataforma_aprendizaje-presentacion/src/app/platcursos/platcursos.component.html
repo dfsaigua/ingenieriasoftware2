@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Theme Company Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="platprincipal">Logo </a>
+          <a class="navbar-brand">
+            <input
+              type="text"
+              class="form-control"
+              name="filterPost"
+              placeholder="Buscar cursos"
+              [(ngModel)]="filterPost"
+              required
+            />
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="platprincipal">INICIO</a></li>
+            <li><a href="platcursos">CURSOS </a></li>
+            <li><a href="plattutorias">TUTORÍAS </a></li>
+            <li><a href="platperfil">PERFIL</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="row" *ngFor="let d of data | filter: filterPost">
+        <div class="col-sm-3">
+          <div class="well">
+            <h3>{{ d.category.name }}</h3>
+
+            <button routerLink="/registro" class="btn btn-success btn-sm">
+              <span class="glyphicon glyphicon-user"></span> Registrarse
+            </button>
+            <!-- <button routerLink="/registro" class="btn btn-primary btn-sm"> Información</button> -->
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Nombre del Curso: {{ d.name }}</p>
+            <p>Descripción del Curso: {{ d.description }}</p>
+            <p>Duración: {{ d.duration }}</p>
+            <p>Fecha de Inicio del Curso: {{ d.start_date }}</p>
+            <p>Fecha de Fin del Curso: {{ d.end_date }}</p>
+            <p>Cantidad de Cupos: {{ d.max_spots }}</p>
+            <p>Costo: ${{ d.cost }}</p>
+          </div>
+        </div>
+      </div>
+
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Theme Company Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="platprincipal">Logo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="platprincipal">INICIO</a></li> plattutorias
+            <li><a href="platcursos">CURSOS </a></li>
+            <li><a href="plattutorias">TUTORÍAS </a></li>
+            <li><a href="platperfil">PERFIL</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div *ngFor="let d of data">
+      <div class="col-sm-9">
+        <div class="well">
+          <h3>{{ d.name }}</h3>
+          <p>
+            <b>Categoría: </b>{{ d.category }}<br />
+            <b>Fecha de Inicio del Curso: </b> {{ d.start_date }}<br />
+            <b>Fecha de Fin del Curso: </b> {{ d.end_date }}<br />
+          </p>
+          <button routerLink="/conferencia" class="btn btn-success btn-sm">
+            <span class="glyphicon glyphicon-facetime-video"></span> Conferencia
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>

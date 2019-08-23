@@ -1,0 +1,125 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="principal">Logo</a>
+    </div>
+  </div>
+</nav>
+<div class="logeo">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">REGISTRO EN LÍNEA</h3>
+        </div>
+        <div class="panel-body">
+          <form accept-charset="UTF-8" role="form">
+            <fieldset>
+
+              <div class="form-group col-lg-6">
+                <label>Correo electrónico</label>
+                <input required [(ngModel)]="studentUser.email" name="email" (change)="log(email)" #email="ngModel"
+                  id="email" type="email" class="form-control" />
+                <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Ingrese correo electrónico</div>
+
+              </div>
+
+
+              <div class="form-group col-lg-6">
+                <label>Contraseña</label>
+                <input required [(ngModel)]="studentUser.password" name="password" (change)="log(password)"
+                  #password="ngModel" id="password" type="password" min="1" max="8" class="form-control"  />
+                <div class="alert alert-danger" *ngIf="password.touched && !password.valid">Ingrese una contraseña</div>
+                <div class="alert alert-danger" *ngIf="password.touched && password.hasError('max')">Contraseña debe ser de
+                  máximo 8 caracteres</div>
+
+              </div>
+
+              <div class="form-group col-lg-6">
+                <label>Confirmar contraseña</label>
+                <input required [(ngModel)]="passwordRepetition" name="passwordRepetition" id="passwordRepetition"
+                  type="password" min="1" max="8" class="form-control" />
+              </div>
+
+              <div class="form-group col-lg-6">
+                <label>Nombre</label>
+                <input required [(ngModel)]="studentUser.profile.names" name="names" (change)="log(names)"
+                  #names="ngModel" id="names" type="text" class="form-control" />
+                <div class="alert alert-danger" *ngIf="names.touched && !names.valid">Ingrese nombre</div>
+              </div>
+
+
+              <div class="form-group col-lg-6">
+                <label>Apellido</label>
+                <input required [(ngModel)]="studentUser.profile.last_names" name="last_names"
+                  (change)="log(last_names)" #last_names="ngModel" id="last_names" type="text" class="form-control" />
+                <div class="alert alert-danger" *ngIf="last_names.touched && !last_names.valid">Ingrese apellido</div>
+              </div>
+
+
+              <div class="form-group col-lg-6">
+                <label>Número de cédula</label>
+                <input required [(ngModel)]="studentUser.profile.identification" name="identification"
+                  (change)="log(identification)" #identification="ngModel" id="identification" type="number"
+                   maxlength='9' class="form-control" />
+                <div class="alert alert-danger" *ngIf="identification.touched && !identification.valid">Ingrese número
+                  de cédula</div>
+                <div class="alert alert-danger" *ngIf="identification.touched && identification.hasError('maxlength')">Ingrese cédula
+                  válida</div>
+              </div>
+
+
+              <div class="form-group col-lg-6">
+                <label>Dirección</label>
+                <input required [(ngModel)]="studentUser.profile.address" name="address" (change)="log(address)"
+                  #address="ngModel" id="address" type="text" class="form-control" />
+                <div class="alert alert-danger" *ngIf="address.touched && !address.valid">Ingrese dirección de domicilio
+                </div>
+              </div>
+              >
+
+              <div class="form-group col-lg-6">
+                <label>Fecha de nacimiento</label>
+                <input required [(ngModel)]="studentUser.profile.dob" name="dbo" (change)="log(dob)" #dob="ngModel"
+                  id="dob" type="date" class="form-control" />
+                <div class="alert alert-danger" *ngIf="dob.touched && !dob.valid">Ingrese su fecha de nacimiento</div>
+              </div>
+
+
+              <div class="form-group col-lg-6">
+                <label>Teléfono</label>
+                <input required [(ngModel)]="studentUser.profile.phone" name="phone" (change)="log(phone)"
+                  #phone="ngModel" id="phone" type="tel" maxlength="10" class="form-control" />
+                <div class="alert alert-danger" *ngIf="phone.touched && !phone.valid">Ingrese número de teléfono</div>
+                <div class="alert alert-danger" *ngIf="phone.touched && phone.hasError('max')">Ingrese número de teléfono
+                  válido</div>
+              </div>
+
+
+
+              <div class="form-group col-lg-6">
+                <label>Género</label>
+                <select ngModel name="genero" (change)="log(genero)" #genero="ngModel" id="genero" type="text"
+                  class="form-control">
+                  <option value="">Elige una opción</option>
+                  <option><input type="radio" value="M" [(ngModel)]="studentUser.profile.gender"
+                      name="gender" />Masculino</option>
+                  <option><input type="radio" value="F" [(ngModel)]="studentUser.profile.gender" name="gender" />
+                    Femenino</option>
+                </select>
+
+              </div>
+              <button class="btn btn-lg btn-success btn-block" expand="block" color="primary"
+                (click)="registrarEstudiante()">Registrar</button>
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

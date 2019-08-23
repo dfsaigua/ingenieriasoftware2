@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Theme Company Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="platprincipal">Logo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="platprincipal">INICIO</a></li> 
+                    <li><a href="platcursos">CURSOS </a></li>
+                    <li><a href="plattutorias">TUTORÍAS </a></li>
+                    <li><a href="platperfil">PERFIL</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row profile">
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <div class="profile-userpic">
+                        <img src="https://static.change.org/profile-img/default-user-profile.svg" class="img-responsive"
+                            alt="" />
+                    </div>
+
+                    <div class="profile-usertitle">
+
+                        <div class="profile-usertitle-job">
+                            <h4 *ngFor="let Lgusuario of data">
+                                {{ person.tipousuario }}
+                            </h4>
+                        </div>
+                    </div>
+
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li>
+
+
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-user" (click)="cambiarModificar()"></i>
+                                    Modificar información
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="glyphicon glyphicon-folder-open"></i>
+                                    Archivos
+                                </a>
+
+                                <input class="btn btn-primary btn-md"  type="submit" value="Cerrar Sesion" (click)="Logout()" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="profile-content" *ngIf="!modificar">
+
+                <h3>DATOS PERSONALES:</h3>
+
+                <h4> Nombre completo: {{person.profile.names}} {{person.profile.last_names}}</h4>
+                <h4> Email:{{person.email}} </h4>
+                <h4>Fecha de nacimiento: {{person.profile.dob}}</h4>
+                <h4>Teléfono: {{person.profile.phone}}</h4>
+                <h4>Dirección: {{person.profile.address}}</h4>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

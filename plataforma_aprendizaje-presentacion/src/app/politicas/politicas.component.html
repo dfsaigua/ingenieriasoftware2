@@ -1,0 +1,138 @@
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Proyecto tutorias en línea</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Lato"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+  >
+    <a href="principal"><mat-toolbar>LOGO</mat-toolbar></a>
+    <mat-nav-list>
+      <a mat-list-item href="login">Log-In</a>
+      <a mat-list-item href="tutorias">Tutorias</a>
+      <a mat-list-item href="cursos">Cursos</a>
+      <a mat-list-item href="conocenos">Conócenos</a>
+      <a mat-list-item href="politicas">Politicas </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <body>
+      <div class="jumbotron text-center">
+        <h1>Online Tutoring</h1>
+        <p>Los únicos en el Ecuador</p>
+        <form></form>
+      </div>
+
+      <div id="contact" class="container-fluid bg-grey">
+        <h3>NUESTRA POLÍTICA DE CALIDAD</h3>
+        <p>
+          La Institución Educativa Open-learning, brinda formación integral
+          científico y humanista, a estudiantes mediante el desarrollo de sus
+          competencias, a través de propuestas pedagógicas actuales, propiciando
+          una convivencia armónica y democrática en la diversidad cultural y
+          social, se compromete a:
+        </p>
+        <p>
+          * Brindar una propuesta educativa de calidad que satisfaga las
+          necesidades de nuestros estudiantes y padres de familia que cumpla con
+          las normas legales e institucionales, aplicables a los servicios que
+          ofrecemos.
+        </p>
+        <p>
+          * Mejorar continuamente los procesos integrales del servicio
+          educativo.
+        </p>
+        <p>
+          * Capacitar permanentemente a nuestros colaboradores en los procesos,
+          actividades o servicios.
+        </p>
+
+        <h3>NUESTROS OBJETIVOS DE CALIDAD</h3>
+        <p>
+          Open-Learning, establece los objetivos de calidad para asegurar el
+          cumplimiento de los compromisos asumidos. Los Objetivos son:
+        </p>
+        <p>
+          * El usuario registrado solo podrá registrarse en tutorías con tutores
+          disponibles.
+        </p>
+        <p>
+          * El usuario podrá ver el contenido de cursos que ya hubiese
+          culminado.
+        </p>
+        <p>* Todas las semanas se agregan nuevas tutorias.</p>
+        <p>
+          * Proponer e implementar Planes de Mejora y Planes de Innovación que
+          permitan el logro de aprendizajes de calidad.
+        </p>
+        <p>* Revisión y mejora de los documentos de planificación y gestión.</p>
+        <p>
+          * Impulsar estrategias metodológicas y actividades que promuevan
+          aprendizajes de calidad dentro del modelo pedagógico institucional.
+        </p>
+        <p>
+          * Evaluar y realizar auditorías internas relacionadas con la calidad
+          de cada gestión.
+        </p>
+        <p>* Conservar el buen clima laboral en la institución.</p>
+      </div>
+
+      <footer id="footer">
+        <div class="inner">
+          <p class="id_small">
+            © El contenido de esta obra es de propiedad intelectual de "Proyecto
+            de Aprendizaje". Todos los derechos reservados.Prohibida su
+            reproducción total,parcial, comunicación pública o distribución sin
+            autorización previa del titular de los derechos
+          </p>
+          <ul class="icons">
+            <li>
+              <a href="#" class="icon fa-twitter"
+                ><span class="label">Twitter</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="icon fa-facebook"
+                ><span class="label">Facebook</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="icon fa-instagram"
+                ><span class="label">Instagram</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="icon fa-envelope"
+                ><span class="label">Email</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </body>
+  </mat-sidenav-content>
+</mat-sidenav-container>

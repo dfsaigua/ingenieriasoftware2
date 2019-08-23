@@ -1,0 +1,85 @@
+
+.navbar {
+  background-color:#ffff;
+  z-index: 9999;
+  border: 0;
+  font-size: 14px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+  font-family: Montsrrat, sans-serif;
+}
+.navbar li a, .navbar .navbar-brand {
+  color:#38b6ff ;
+}
+/*
+body {
+    background-image: url(src\images\fondo_inicio-26.PNG);
+    background-size: cover;
+  }
+*/
+
+.btn-primary{
+  border-radius:30%;
+  margin-top: 10%; 
+  padding: 5px 20px 5px 20px;
+  background-color: #38b6ff;
+
+}
+
+.form-control-buscar{
+  margin-right: 8px;
+  border-radius: 2%;
+  margin-top: 8%; 
+  border-block-style: #2e2b2b;
+  
+}
+
+.context-dark, .bg-gray-dark, .bg-primary {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+  color: #38b6ff;
+}
+.nav-list li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.nav-list li a:hover:before {
+  margin-left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 23px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+.social-container .col {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nav-list li a:before {
+  content: "\f14f";
+  font: 400 21px/1 "Material Design Icons";
+  color: #4d6de6;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: -28px;
+  margin-right: 7px;
+  opacity: 0;
+  visibility: hidden;
+  transition: .22s ease;
+}

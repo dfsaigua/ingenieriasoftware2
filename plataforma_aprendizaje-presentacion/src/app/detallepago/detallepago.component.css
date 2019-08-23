@@ -1,0 +1,23 @@
+body { margin-top:20px; }
+.panel-title {display: inline;font-weight: bold;}
+.checkbox.pull-right { margin: 0; }
+.pl-ziro { padding-left: 0px; }
+
+.container {
+     max-width: 100%;
+    background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(13).jpg");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.factura{
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5%;
+  margin-right: auto;
+  margin-left: auto;
+
+}

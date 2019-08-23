@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Theme Company Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+
+
+
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <div class="videollamada">
+      <div class="col-sm-3">
+        <video id="device" controls autoplay #remote></video>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="showRemote()"
+          [disabled]="callActive"
+        >
+          Conectarse
+        </button>
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="hangup()"
+          [disabled]="!callActive"
+        >
+          Desconectarse
+        </button>
+      </div>
+      <div class="col-xs-6">
+        <input
+          type="text"
+          id="img-search-field"
+          placeholder="Buscar imagenes"
+          title="Escriba algo"
+          [(ngModel)]="query"
+        />
+    	<button
+          (click)="imageSearch(query)"
+          formtarget="_blank"
+          class="btn btn-primary btn-sm"
+        >
+          BUSCAR
+        </button>
+        <div class="galeria">
+            <h1>Imagenes buscadas</h1>
+            <div class="linea"></div>
+            <div class="contenedor-imagenes" >
+                <div class="imagen" *ngFor="let imgURL of imgResults" >
+                    <img alt="missing" src={{imgURL}}>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
